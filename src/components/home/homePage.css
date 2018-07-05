@@ -1,0 +1,14 @@
+.homePage {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.homePage__valueBtn {
+  padding: 10px;
+  background-color: #333;
+  width: 150px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}

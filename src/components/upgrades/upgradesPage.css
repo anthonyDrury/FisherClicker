@@ -1,0 +1,26 @@
+.upgrades .upgradeElement {
+  width: 150px;
+  padding: 5px;
+  background-color: #333;
+  color: white;
+}
+.upgradeElement.disabled {
+  opacity: 0.5;
+}
+
+.upgrades .upgradeElement__bonus {
+  color: orange;
+}
+
+.upgrades .upgradeElement__price {
+  color: orange;
+}
+
+.upgrades .upgrades__displaySection {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 50%;
+  min-width: 320px;
+  max-height: 90%;
+}
