@@ -1,26 +1,20 @@
 import initialState from "../store/initialState";
+import update from "immutability-helper";
+//https://github.com/kolodny/immutability-helper
 
 //START HERE
 export default function upgradesReducer(state = initialState.upgrades, action) {
   switch (action.type) {
     case "BUY_UPGRADE":
-      state[action.id].upgrade = {
-        ...action.payload
-      };
-      return {
-        ...state
-      };
-    // case "BUY_UPGRADE":
-    //   return Object.assign({}, state);
+      return update(state, {
+        [action.id]: { $merge: action.payload }
+      });
     case "SET_UPGRADECLASS":
-      console.log(action.id);
-      state[action.id] = {
-        ...state[action.id],
-        ...action.payload
-      };
-      return {
-        ...state
-      };
+      return update(state, {
+        [action.id]: {
+          disabled: { $set: action.payload }
+        }
+      });
     default:
       return state;
   }

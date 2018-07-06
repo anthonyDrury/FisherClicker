@@ -6,7 +6,14 @@ import { Provider } from "react-redux";
 import routes from "./routes";
 import "./styles/styles.css";
 
-const store = configureStore();
+import { loadState, saveState } from "./store/localStorage";
+
+const persistedStore = loadState();
+const store = configureStore(persistedStore);
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 render(
   <Provider store={store}>

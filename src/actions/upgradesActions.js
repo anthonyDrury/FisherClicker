@@ -1,8 +1,8 @@
-export function buyUpgrade(upgrade, id) {
+export function buyUpgrade(upgrades, id) {
   return {
     type: "BUY_UPGRADE",
     id: id,
-    payload: { upgrade }
+    payload: { upgrades }
   };
 }
 
@@ -14,6 +14,6 @@ export function setUpgradeClass(upgrade, id, className) {
   return {
     type: "SET_UPGRADECLASS",
     id: id,
-    payload: { disabled: className }
+    payload: className
   };
 }

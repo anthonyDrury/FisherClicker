@@ -11,4 +11,9 @@
   border-radius: 5px;
   color: white;
   font-size: 20px;
+  border: none;
+}
+
+.homePage__valueBtn:focus {
+  outline-color: transparent;
 }

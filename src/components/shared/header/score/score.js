@@ -46,11 +46,13 @@ class Score extends React.Component {
     return (
       <div className="score">
         <p className="score__value">
-          Per Second: {this.props.score.perSecondValue}
+          Per Second:<br />
+          {this.props.score.perSecondValue}
         </p>
 
         <p className="score__value">
-          Total Value: {this.props.score.totalValue}
+          Total Fish:<br />
+          {this.props.score.totalValue}
         </p>
       </div>
     );

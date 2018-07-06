@@ -6,7 +6,13 @@ class BuyButton extends React.Component {
   };
 
   render() {
-    return <button onClick={this.handleClick}>Buy</button>;
+    return (
+      <span className="upgradeElement__curserWrap">
+        <button onClick={this.handleClick} className="upgradeElement__btn">
+          Hire
+        </button>
+      </span>
+    );
   }
 }
 

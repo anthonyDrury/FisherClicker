@@ -17,18 +17,36 @@ class UpgradesPage extends React.Component {
     this.displayUpgrades = this.displayUpgrades.bind(this);
   }
 
+  /* Purchases Upgrade if user has enough points,
+     Sets new total score minus price of upgrade,
+     adds to the per second total score,
+     sets upgrade to disabled if not enough points */
   buyUpgrade(element, index) {
-    if (this.props.score.totalValue >= element.price) {
+    if (this.props.score.totalValue >= this.props.upgrades[index].price) {
       let newScore = this.props.score;
-      newScore.totalValue = newScore.totalValue - element.price;
-      newScore.perSecondValue += element.perSecondBonus;
+      newScore.totalValue =
+        newScore.totalValue - this.props.upgrades[index].price;
+      newScore.perSecondValue += this.props.upgrades[index].perSecondBonus;
 
       let newUpgrades = this.props.upgrades;
       newUpgrades[index].amount++;
-      newUpgrades[index].price *= newUpgrades[index].amount + 1;
+      newUpgrades[index].price += newUpgrades[index].initialPrice;
 
       this.props.updateScore(newScore);
       this.props.buyUpgrade(newUpgrades[index], index);
+
+      //update total score and upgrade price before setting class
+      if (
+        this.props.score.totalValue >= this.props.upgrades[index].price &&
+        element.disabled === "disabled"
+      ) {
+        this.props.setUpgradeClass(newUpgrades, index, "");
+      } else if (
+        this.props.score.totalValue < this.props.upgrades[index].price &&
+        element.disabled !== "disabled"
+      ) {
+        this.props.setUpgradeClass(newUpgrades, index, "disabled");
+      }
     }
   }
 
@@ -73,7 +91,7 @@ class UpgradesPage extends React.Component {
 
 UpgradesPage.propTypes = {
   score: PropTypes.object.isRequired,
-  upgrades: PropTypes.object.isRequired,
+  upgrades: PropTypes.array.isRequired,
   updatePerSecond: PropTypes.func.isRequired,
   updateTotalValue: PropTypes.func.isRequired
 };
@@ -93,7 +111,9 @@ function mapDispatchToProps(dispatch) {
       dispatch(scoreActions.updatePerSecond(score.perSecondValue)),
     updateScore: score => dispatch(scoreActions.updateScore(score)),
     buyUpgrade: (upgrades, index) =>
-      dispatch(upgradesActions.buyUpgrade(upgrades, index))
+      dispatch(upgradesActions.buyUpgrade(upgrades, index)),
+    setUpgradeClass: (upgrade, id, className) =>
+      dispatch(upgradesActions.setUpgradeClass(upgrade, id, className))
   };
 }
 

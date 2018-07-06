@@ -25,7 +25,7 @@ class HomePage extends React.Component {
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdate}
-          value="Click"
+          value="Fish"
         />
       </div>
     );

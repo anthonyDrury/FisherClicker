@@ -2,6 +2,7 @@ import { createStore } from "redux";
 import rootReducer from "../reducers";
 import initialState from "./initialState";
 
-export default function configureStore() {
-  return createStore(rootReducer, initialState);
+//Load from Cache if present else initialstate
+export default function configureStore(cacheState = initialState) {
+  return createStore(rootReducer, cacheState);
 }

@@ -3,9 +3,7 @@
   padding: 5px;
   background-color: #333;
   color: white;
-}
-.upgradeElement.disabled {
-  opacity: 0.5;
+  margin: 5px;
 }
 
 .upgrades .upgradeElement__bonus {
@@ -16,11 +14,28 @@
   color: orange;
 }
 
+.upgrades .upgradeElement__btn {
+  color: black;
+}
+
+.upgradeElement.disabled {
+  opacity: 0.5;
+}
+
+.upgrades .disabled .upgradeElement__curserWrap {
+  cursor: not-allowed;
+}
+
+.upgrades .disabled .upgradeElement__btn {
+  pointer-events: none;
+  color: white;
+}
+
 .upgrades .upgrades__displaySection {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  width: 50%;
-  min-width: 320px;
-  max-height: 90%;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  max-width: 800px;
+  margin: 0 auto;
 }

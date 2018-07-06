@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, IndexLink } from "react-router";
-import "./header.css";
 import Score from "./score/score";
+import "./header.css";
 
 const Header = () => {
   return (
