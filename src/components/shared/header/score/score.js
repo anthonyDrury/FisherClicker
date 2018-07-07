@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as scoreActions from "../../../../actions/scoreActions";
 import * as upgradesActions from "../../../../actions/upgradesActions";
 
-import "./score.css";
+import "./score.scss";
 
 class Score extends React.Component {
   constructor(props, context) {

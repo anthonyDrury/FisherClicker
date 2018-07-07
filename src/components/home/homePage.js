@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as scoreActions from "../../actions/scoreActions";
 
-import "./homePage.css";
+import "./homePage.scss";
 
 class HomePage extends React.Component {
   constructor(props, context) {

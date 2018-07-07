@@ -4,7 +4,7 @@ import { Router, browserHistory } from "react-router";
 import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import routes from "./routes";
-import "./styles/styles.css";
+import "./styles/styles.scss";
 
 import { loadState, saveState } from "./store/localStorage";
 
