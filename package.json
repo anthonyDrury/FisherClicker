@@ -1,9 +1,10 @@
 {
-  "name": "n95k07ovnj",
+  "name": "fisherclicker",
   "version": "1.0.0",
   "description": "FisherClicker AnthonyDrury",
   "keywords": [],
   "main": "src/index.js",
+  "homepage": "http://anthonyDrury.github.io/fisherclicker",
   "dependencies": {
     "ajv": "^6.5.2",
     "autoprefixer": "7.1.6",
@@ -53,19 +54,16 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-html-replace": "^1.6.2",
-    "gulp-react": "^3.1.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-uglify": "^3.0.0",
+    "gh-pages": "^1.2.0",
     "node-sass": "^4.9.1",
     "sass-loader": "^7.0.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "collectCoverageFrom": [
