@@ -15,7 +15,7 @@ const initialState = {
       title: "Amateur Fisher",
       price: 1000,
       initialPrice: 1000,
-      perSecondBonus: 5,
+      perSecondBonus: 10,
       amount: 0,
       disabled: "disabled"
     },
@@ -24,7 +24,7 @@ const initialState = {
       title: "Local Legend",
       price: 10000,
       initialPrice: 10000,
-      perSecondBonus: 10,
+      perSecondBonus: 100,
       amount: 0,
       disabled: "disabled"
     },
@@ -33,7 +33,7 @@ const initialState = {
       title: "Pro Fisher",
       price: 100000,
       initialPrice: 100000,
-      perSecondBonus: 50,
+      perSecondBonus: 500,
       amount: 0,
       disabled: "disabled"
     },
@@ -42,7 +42,7 @@ const initialState = {
       title: "David",
       price: 500000,
       initialPrice: 500000,
-      perSecondBonus: 100,
+      perSecondBonus: 1000,
       amount: 0,
       disabled: "disabled"
     },
@@ -51,7 +51,7 @@ const initialState = {
       title: "Tinny",
       price: 1000000,
       initialPrice: 1000000,
-      perSecondBonus: 200,
+      perSecondBonus: 2000,
       amount: 0,
       disabled: "disabled"
     },
@@ -60,7 +60,7 @@ const initialState = {
       title: "Fishing Trawler",
       price: 10000000,
       initialPrice: 10000000,
-      perSecondBonus: 500,
+      perSecondBonus: 5000,
       amount: 0,
       disabled: "disabled"
     },
@@ -69,7 +69,7 @@ const initialState = {
       title: "Pro Vessel",
       price: 15000000,
       initialPrice: 15000000,
-      perSecondBonus: 800,
+      perSecondBonus: 8000,
       amount: 0,
       disabled: "disabled"
     },
@@ -78,7 +78,7 @@ const initialState = {
       title: "Pequod",
       price: 35000000,
       initialPrice: 35000000,
-      perSecondBonus: 1000,
+      perSecondBonus: 10000,
       amount: 0,
       disabled: "disabled"
     },
@@ -87,7 +87,7 @@ const initialState = {
       title: "Maui",
       price: 100000000,
       initialPrice: 100000000,
-      perSecondBonus: 10000,
+      perSecondBonus: 100000,
       amount: 0,
       disabled: "disabled"
     }

@@ -9,7 +9,6 @@ import "./score.scss";
 class Score extends React.Component {
   constructor(props, context) {
     super(props, context);
-
     this.incrementPerSecond = this.incrementPerSecond.bind(this);
   }
 

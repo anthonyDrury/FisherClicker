@@ -4,7 +4,6 @@
   "description": "FisherClicker AnthonyDrury",
   "keywords": [],
   "main": "src/index.js",
-  "proxy": "http://localhost:3004/",
   "dependencies": {
     "ajv": "^6.5.2",
     "autoprefixer": "7.1.6",

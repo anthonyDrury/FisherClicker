@@ -10,9 +10,6 @@ const Header = () => {
         <IndexLink to="/" className="navBar__link" activeClassName="active">
           Home
         </IndexLink>
-        <Link to="/upgrades" className="navBar__link" activeClassName="active">
-          Upgrades
-        </Link>
         <Link to="/about" className="navBar__link" activeClassName="active">
           About
         </Link>

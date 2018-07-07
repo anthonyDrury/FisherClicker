@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as scoreActions from "../../actions/scoreActions";
-import * as upgradesActions from "../../actions/upgradesActions";
+import * as scoreActions from "../../../actions/scoreActions";
+import * as upgradesActions from "../../../actions/upgradesActions";
 import BuyButton from "./buyButton/buyButton";
-import "./upgradesPage.scss";
+import "./upgradesSection.scss";
 
-class UpgradesPage extends React.Component {
+class UpgradesSection extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -50,6 +50,8 @@ class UpgradesPage extends React.Component {
     }
   }
 
+
+  //Loops through Redux state and builds the Upgrade Elements
   displayUpgrades() {
     let upgrades = this.props.upgrades;
     let upgradesHTML = [];
@@ -89,7 +91,7 @@ class UpgradesPage extends React.Component {
   }
 }
 
-UpgradesPage.propTypes = {
+UpgradesSection.propTypes = {
   score: PropTypes.object.isRequired,
   upgrades: PropTypes.array.isRequired,
   updatePerSecond: PropTypes.func.isRequired,
@@ -117,4 +119,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpgradesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(UpgradesSection);

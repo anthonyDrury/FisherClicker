@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as scoreActions from "../../actions/scoreActions";
+import UpgradesPage from "./upgrades/upgradesSection";
 
 import "./homePage.scss";
 
@@ -14,19 +15,24 @@ class HomePage extends React.Component {
 
   onClickUpdate() {
     let score = this.props.score;
+
     score.totalValue++;
+
     this.props.updateTotalValue(score);
   }
 
   render() {
     return (
       <div className="homePage">
+        <h1>Fisher Clicker</h1>
         <input
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdate}
           value="Fish"
         />
+        <UpgradesPage />
+
       </div>
     );
   }
