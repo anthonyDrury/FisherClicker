@@ -1,41 +1,26 @@
-.upgrades .upgradeElement {
-  width: 150px;
-  padding: 5px;
-  background-color: #333;
-  color: white;
-  margin: 5px;
-}
-
-.upgrades .upgradeElement__bonus {
-  color: orange;
-}
-
-.upgrades .upgradeElement__price {
-  color: orange;
-}
-
-.upgrades .upgradeElement__btn {
-  color: black;
-}
-
-.upgradeElement.disabled {
-  opacity: 0.5;
-}
-
-.upgrades .disabled .upgradeElement__curserWrap {
-  cursor: not-allowed;
-}
-
-.upgrades .disabled .upgradeElement__btn {
-  pointer-events: none;
-  color: white;
-}
-
 .upgrades .upgrades__displaySection {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   max-height: 90vh;
   max-width: 800px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+  .upgrades .upgrades__displaySection .upgradeElement {
+    width: 150px;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    margin: 5px; }
+    .upgrades .upgrades__displaySection .upgradeElement .upgradeElement__bonus {
+      color: orange; }
+    .upgrades .upgrades__displaySection .upgradeElement .upgradeElement__price {
+      color: orange; }
+    .upgrades .upgrades__displaySection .upgradeElement .upgradeElement__btn {
+      color: black; }
+  .upgrades .upgrades__displaySection .disabled {
+    opacity: 0.5; }
+    .upgrades .upgrades__displaySection .disabled .upgradeElement__curserWrap {
+      cursor: not-allowed; }
+    .upgrades .upgrades__displaySection .disabled .upgradeElement__btn {
+      pointer-events: none;
+      color: white; }

@@ -4,7 +4,9 @@
   "description": "FisherClicker AnthonyDrury",
   "keywords": [],
   "main": "src/index.js",
+  "proxy": "http://localhost:3004/",
   "dependencies": {
+    "ajv": "^6.5.2",
     "immutability-helper": "2.7.1",
     "prop-types": "15.6.2",
     "react": "16.4.1",
@@ -14,7 +16,14 @@
     "react-scripts": "1.1.4",
     "redux": "4.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-react": "^3.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

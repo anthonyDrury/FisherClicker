@@ -1,0 +1,9 @@
+.score {
+  display: flex;
+  justify-content: center;
+  .score__value {
+    padding: 5px 20px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
