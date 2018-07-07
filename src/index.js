@@ -17,7 +17,7 @@ store.subscribe(() => {
 
 render(
   <Provider store={store}>
-    <Router basename={process.env.PUBLIC_URL} history={browserHistory} routes={routes} />
+    <Router history={browserHistory} routes={routes} />
   </Provider>,
   document.getElementById("app")
 );
