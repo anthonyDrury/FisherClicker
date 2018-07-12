@@ -11,9 +11,7 @@ export default function scoreReducer(state = initialState.score, action) {
         totalValue: action.totalValue
       });
     case "UPDATE_SCORE":
-      return Object.assign({}, state, {
-        score: action.score
-      });
+      return Object.assign({}, action.score);
 
     default:
       return state;
