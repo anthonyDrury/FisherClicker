@@ -27,8 +27,10 @@ class Score extends React.Component {
     let score = this.props.score;
     let upgrades = this.props.upgrades;
 
+
+    //Calculate PerSecondValue to tenth. Add remainder to localstate to be used next tenth.
     let scorePerTenth = score.perSecondValue + this.state.valueBuffer;
-    let remainder = 10 % scorePerTenth;
+    let remainder = scorePerTenth % 10;
     this.setState({valueBuffer: remainder});
     scorePerTenth = Math.floor(scorePerTenth/10);
     
