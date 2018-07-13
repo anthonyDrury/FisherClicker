@@ -9,11 +9,14 @@ import "./score.scss";
 class Score extends React.Component {
   constructor(props, context) {
     super(props, context);
+    this.state = {
+      valueBuffer: 0.0
+    }
     this.incrementPerSecond = this.incrementPerSecond.bind(this);
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.incrementPerSecond(), 1000);
+    this.timerID = setInterval(() => this.incrementPerSecond(), 100);
   }
 
   componentWillUnmount() {
@@ -23,7 +26,16 @@ class Score extends React.Component {
   incrementPerSecond() {
     let score = this.props.score;
     let upgrades = this.props.upgrades;
-    score.totalValue = score.totalValue + score.perSecondValue;
+
+    let scorePerTenth = score.perSecondValue + this.state.valueBuffer;
+    let remainder = 10 % scorePerTenth;
+    this.setState({valueBuffer: remainder});
+    scorePerTenth = Math.floor(scorePerTenth/10);
+    
+
+
+
+    score.totalValue = score.totalValue + scorePerTenth;
     this.props.updateTotalValue(score);
 
     Object.values(upgrades).forEach(element => {
