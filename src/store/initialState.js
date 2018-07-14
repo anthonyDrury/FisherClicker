@@ -1,6 +1,6 @@
 const initialState = {
-  score: { perSecondValue: 0, totalValue: 0 },
-  upgrades: [
+  score: { tpsFish: 0, tpsSale: 1, totalFish: 0, totalValue: 0 },   //tps = TotalPerSecond
+  upgradesFish: [
     {
       id: 0,
       title: "Local Boy",
@@ -8,6 +8,7 @@ const initialState = {
       initialPrice: 10,
       perSecondBonus: 1,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -17,6 +18,7 @@ const initialState = {
       initialPrice: 1000,
       perSecondBonus: 10,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -26,6 +28,7 @@ const initialState = {
       initialPrice: 10000,
       perSecondBonus: 100,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -35,6 +38,7 @@ const initialState = {
       initialPrice: 100000,
       perSecondBonus: 500,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -44,6 +48,7 @@ const initialState = {
       initialPrice: 500000,
       perSecondBonus: 1000,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -53,6 +58,7 @@ const initialState = {
       initialPrice: 1000000,
       perSecondBonus: 2000,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -62,6 +68,7 @@ const initialState = {
       initialPrice: 10000000,
       perSecondBonus: 5000,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -71,6 +78,7 @@ const initialState = {
       initialPrice: 15000000,
       perSecondBonus: 8000,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -80,6 +88,7 @@ const initialState = {
       initialPrice: 35000000,
       perSecondBonus: 10000,
       amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     },
     {
@@ -89,6 +98,19 @@ const initialState = {
       initialPrice: 100000000,
       perSecondBonus: 100000,
       amount: 0,
+      target: ["anchovie"],
+      disabled: "disabled"
+    }
+  ],
+  upgradesSale: [
+    {
+      id: 0,
+      title: "Street Merchant",
+      price: 10,
+      initialPrice: 10,
+      perSecondBonus: 1,
+      amount: 0,
+      target: ["anchovie"],
       disabled: "disabled"
     }
   ]

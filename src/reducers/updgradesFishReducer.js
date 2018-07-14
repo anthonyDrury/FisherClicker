@@ -3,13 +3,13 @@ import update from "immutability-helper";
 //https://github.com/kolodny/immutability-helper
 
 //START HERE
-export default function upgradesReducer(state = initialState.upgrades, action) {
+export default function upgradesFishReducer(state = initialState.upgradesFish, action) {
   switch (action.type) {
-    case "BUY_UPGRADE":
+    case "BUY_UPGRADEFISH":
       return update(state, {
         [action.id]: { $merge: action.payload }
       });
-    case "SET_UPGRADECLASS":
+    case "SET_UPGRADEFISHCLASS":
       return update(state, {
         [action.id]: {
           disabled: { $set: action.payload }

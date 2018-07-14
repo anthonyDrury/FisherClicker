@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as scoreActions from "../../actions/scoreActions";
-import UpgradesPage from "./upgrades/upgradesSection";
+import UpgradeFish from "./upgrades/upgradesFish/upgradesFishSection";
+import UpgradeSale from "./upgrades/upgradesSale/upgradesSaleSection";
 
 import "./homePage.scss";
 
@@ -10,15 +11,43 @@ class HomePage extends React.Component {
   constructor(props, context) {
     super(props, context);
 
+    this.state = {
+      upgradeView: "Fish"
+    }
+
     this.onClickUpdate = this.onClickUpdate.bind(this);
+    this.updateUpgrades_Fish = this.updateUpgrades_Fish.bind(this);
+    this.updateUpgrades_Sale = this.updateUpgrades_Sale.bind(this);
+    this.displayUpgrades = this.displayUpgrades.bind(this);
+
+  }
+
+  updateUpgrades_Fish() {
+    this.setState({upgradeView: "Fish"});
+  }
+
+  updateUpgrades_Sale() {
+    this.setState({upgradeView: "Sale"});
   }
 
   onClickUpdate() {
     let score = this.props.score;
 
-    score.totalValue++;
+    score.totalFish++;
 
-    this.props.updateTotalValue(score);
+    this.props.updateTotalFish(score);
+  }
+
+  displayUpgrades() {
+    let upgradesHTML = <UpgradeFish />;
+
+    if (this.state.upgradeView === "Fish"){
+      upgradesHTML = <UpgradeFish />;
+    } else if (this.state.upgradeView === "Sale") {
+      upgradesHTML = <UpgradeSale />;
+    }
+
+    return upgradesHTML;
   }
 
   render() {
@@ -31,7 +60,19 @@ class HomePage extends React.Component {
           onClick={this.onClickUpdate}
           value="Fish"
         />
-        <UpgradesPage />
+        
+        <button
+        onClick={this.updateUpgrades_Fish}
+        >Fish Upgrades</button>
+        
+        <button
+        onClick={this.updateUpgrades_Sale}
+        >Sale Upgrades</button>
+
+        {this.displayUpgrades()}
+
+        
+        
 
       </div>
     );
@@ -41,7 +82,7 @@ class HomePage extends React.Component {
 HomePage.propTypes = {
   score: PropTypes.object.isRequired,
   updatePerSecond: PropTypes.func.isRequired,
-  updateTotalValue: PropTypes.func.isRequired
+  updateTotalFish: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -54,8 +95,8 @@ function mapDispatchToProps(dispatch) {
   return {
     updatePerSecond: score =>
       dispatch(scoreActions.updatePerSecond(score.perSecondValue)),
-    updateTotalValue: score =>
-      dispatch(scoreActions.updateTotalValue(score.totalValue))
+    updateTotalFish: score =>
+      dispatch(scoreActions.updateTotalFish(score.totalFish))
   };
 }
 
