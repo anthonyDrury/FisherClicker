@@ -1,6 +1,4 @@
 import initialState from "../store/initialState";
-import update from "immutability-helper";
-//https://github.com/kolodny/immutability-helper
 
 //START HERE
 export default function upgradesSaleReducer(state = initialState.upgradesSale, action) {
