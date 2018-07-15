@@ -2,7 +2,7 @@ export const loadState = () => {
   try {
     const serializedState = localStorage.getItem("fisherClicker_state");
     if (serializedState === null) {
-      console.log("Serialized state is null");
+      console.log("Serialized state is null, loading new state");
       return undefined;
     }
     return JSON.parse(serializedState);

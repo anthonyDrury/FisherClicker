@@ -1,7 +1,7 @@
 const initialState = {
   score: { tpsFish: 0, tpsSale: 1, totalFish: 0, totalValue: 0 },   //tps = TotalPerSecond
-  upgradesFish: [
-    {
+  upgradesFish: {
+    0: {
       id: 0,
       title: "Local Boy",
       price: 10,
@@ -11,7 +11,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    1: {
       id: 1,
       title: "Amateur Fisher",
       price: 1000,
@@ -21,7 +21,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    2: {
       id: 2,
       title: "Local Legend",
       price: 10000,
@@ -31,7 +31,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    3: {
       id: 3,
       title: "Pro Fisher",
       price: 100000,
@@ -41,7 +41,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    4: {
       id: 4,
       title: "David",
       price: 500000,
@@ -51,7 +51,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    5: {
       id: 5,
       title: "Tinny",
       price: 1000000,
@@ -61,7 +61,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    6: {
       id: 6,
       title: "Fishing Trawler",
       price: 10000000,
@@ -71,7 +71,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    7: {
       id: 7,
       title: "Pro Vessel",
       price: 15000000,
@@ -81,7 +81,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    8: {
       id: 7,
       title: "Pequod",
       price: 35000000,
@@ -91,7 +91,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    9: {
       id: 8,
       title: "Maui",
       price: 100000000,
@@ -101,9 +101,9 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     }
-  ],
-  upgradesSale: [
-    {
+  },
+  upgradesSale: {
+    0: {
       id: 0,
       title: "Street Merchant",
       price: 10,
@@ -113,7 +113,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    1: {
       id: 1,
       title: "Fish Biker",
       price: 1000,
@@ -123,7 +123,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    2: {
       id: 2,
       title: "Fish Cart",
       price: 10000,
@@ -133,7 +133,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    3: {
       id: 3,
       title: "Entrepreneur",
       price: 100000,
@@ -143,7 +143,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    4: {
       id: 4,
       title: "Fish'n'Shop",
       price: 500000,
@@ -153,7 +153,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    5: {
       id: 5,
       title: "Fish R Us",
       price: 1000000,
@@ -163,7 +163,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    6: {
       id: 6,
       title: "Fish 2 U",
       price: 10000000,
@@ -173,7 +173,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    7: {
       id: 7,
       title: "Fish Coin",
       price: 15000000,
@@ -183,7 +183,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    8: {
       id: 7,
       title: "Fish Pill",
       price: 35000000,
@@ -193,7 +193,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     },
-    {
+    9: {
       id: 8,
       title: "~Fysh~",
       price: 100000000,
@@ -203,7 +203,7 @@ const initialState = {
       target: ["anchovie"],
       disabled: "disabled"
     }
-  ]
+  }
 };
 
 export default initialState;

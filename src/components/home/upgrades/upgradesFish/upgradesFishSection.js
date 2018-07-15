@@ -93,7 +93,7 @@ class upgradesFishSection extends React.Component {
 
 upgradesFishSection.propTypes = {
   score: PropTypes.object.isRequired,
-  upgradesFish: PropTypes.array.isRequired,
+  upgradesFish: PropTypes.object.isRequired,
   updatePerSecond: PropTypes.func.isRequired,
   updateTotalValue: PropTypes.func.isRequired
 };

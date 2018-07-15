@@ -93,7 +93,7 @@ class upgradesSaleSection extends React.Component {
 
 upgradesSaleSection.propTypes = {
   score: PropTypes.object.isRequired,
-  upgradesSale: PropTypes.array.isRequired,
+  upgradesSale: PropTypes.object.isRequired,
   updatePerSecond: PropTypes.func.isRequired,
   updateTotalValue: PropTypes.func.isRequired
 };
