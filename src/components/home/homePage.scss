@@ -10,6 +10,34 @@
         &:focus {
             outline-color: transparent;
         }
+        &:active {
+            background-color: darken(#333,10%);
+        }
     }
+
+
+    .homePage__upgrade{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        .homePage__upgradeBtn {
+            padding: 10px;
+            background-color: #333;
+            width: 150px;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+            border: none;
+            margin: 10px;
+            &:focus {
+                outline-color: transparent;
+            }
+    
+            &.active {
+                background-color: darken(#333,10%);
+            }
+        }
+    }
+    
     
 }

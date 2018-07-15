@@ -12,7 +12,9 @@ class HomePage extends React.Component {
     super(props, context);
 
     this.state = {
-      upgradeView: "Fish"
+      upgradeView: "Fish",
+      upgradeFishClass: "active",
+      upgradeSaleClass: ""
     }
 
     this.onClickUpdate = this.onClickUpdate.bind(this);
@@ -23,11 +25,13 @@ class HomePage extends React.Component {
   }
 
   updateUpgrades_Fish() {
-    this.setState({upgradeView: "Fish"});
+    this.setState({ upgradeView: "Fish", upgradeFishClass: "active", upgradeSaleClass: "" });
+
+
   }
 
   updateUpgrades_Sale() {
-    this.setState({upgradeView: "Sale"});
+    this.setState({ upgradeView: "Sale", upgradeFishClass: "", upgradeSaleClass: "active" });
   }
 
   onClickUpdate() {
@@ -41,7 +45,7 @@ class HomePage extends React.Component {
   displayUpgrades() {
     let upgradesHTML = <UpgradeFish />;
 
-    if (this.state.upgradeView === "Fish"){
+    if (this.state.upgradeView === "Fish") {
       upgradesHTML = <UpgradeFish />;
     } else if (this.state.upgradeView === "Sale") {
       upgradesHTML = <UpgradeSale />;
@@ -60,19 +64,24 @@ class HomePage extends React.Component {
           onClick={this.onClickUpdate}
           value="Fish"
         />
-        
-        <button
-        onClick={this.updateUpgrades_Fish}
-        >Fish Upgrades</button>
-        
-        <button
-        onClick={this.updateUpgrades_Sale}
-        >Sale Upgrades</button>
+
+        <div className="homePage__upgrade">
+          <button
+            className={`homePage__upgradeBtn ${this.state.upgradeFishClass}`}
+            onClick={this.updateUpgrades_Fish}
+          >Fish Upgrades</button>
+
+          <button
+            className={`homePage__upgradeBtn ${this.state.upgradeSaleClass}`}
+            onClick={this.updateUpgrades_Sale}
+          >Sale Upgrades</button>
+        </div>
+
 
         {this.displayUpgrades()}
 
-        
-        
+
+
 
       </div>
     );
