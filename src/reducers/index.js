@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
 import score from "./scoreReducer";
-import upgrades from "./updgradesReducer";
+import upgradesFish from "./updgradesFishReducer";
+import upgradesSale from "./updgradesSaleReducer";
 
 const rootReducer = combineReducers({
   score,
-  upgrades
+  upgradesFish,
+  upgradesSale
 });
 
 export default rootReducer;
