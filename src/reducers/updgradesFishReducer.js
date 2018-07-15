@@ -6,16 +6,14 @@ export default function upgradesFishReducer(state = initialState.upgradesFish, a
   switch (action.type) {
 
     case "BUY_UPGRADEFISH":
-    return Object.assign({}, state, {
-      [id]: action.payload
-    });
+      return Object.assign({}, state, {
+        [id]: action.payload
+      });
 
     case "SET_UPGRADEFISHCLASS":
-    return Object.assign({}, state, {
-      [id]: Object.assign({}, state[id], {
-        disabled: action.payload 
-      })
-    });
+      return Object.assign({}, state,
+        [{ ...state[id], disabled: action.payload }]
+      );
 
     default:
       return state;

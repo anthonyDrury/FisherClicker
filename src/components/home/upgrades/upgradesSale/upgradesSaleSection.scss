@@ -23,14 +23,14 @@
             }
         }
         .disabled {
-          opacity: 0.5;
-          .upgradeElement__curserWrap {
-              cursor: not-allowed;
-          }
-          .upgradeElement__btn {
-              pointer-events: none;
-              color: white;
-          }
-      }
+            opacity: 0.5;
+            .upgradeElement__curserWrap {
+                cursor: not-allowed;
+            }
+            .upgradeElement__btn {
+                pointer-events: none;
+                color: white;
+            }
+        }
     }
 }

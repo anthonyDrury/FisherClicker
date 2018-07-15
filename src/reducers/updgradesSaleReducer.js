@@ -6,16 +6,15 @@ export default function upgradesSaleReducer(state = initialState.upgradesSale, a
   switch (action.type) {
 
     case "BUY_UPGRADESALE":
-    return Object.assign({}, state, {
-      [id]: action.payload
-    });
+      return Object.assign({}, state, {
+        [id]: action.payload
+      });
 
     case "SET_UPGRADESALECLASS":
-    return Object.assign({}, state, {
-      [id]: Object.assign({}, state[id], {
-        disabled: action.payload 
-      })
-    });
+      return Object.assign({}, state,
+        [{ ...state[id], disabled: action.payload }]
+      );
+
     default:
       return state;
   }

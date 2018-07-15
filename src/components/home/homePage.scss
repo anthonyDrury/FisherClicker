@@ -11,12 +11,10 @@
             outline-color: transparent;
         }
         &:active {
-            background-color: darken(#333,10%);
+            background-color: darken(#333, 10%);
         }
     }
-
-
-    .homePage__upgrade{
+    .homePage__upgrade {
         display: flex;
         align-content: center;
         justify-content: center;
@@ -32,12 +30,9 @@
             &:focus {
                 outline-color: transparent;
             }
-    
             &.active {
-                background-color: darken(#333,10%);
+                background-color: darken(#333, 10%);
             }
         }
     }
-    
-    
 }
