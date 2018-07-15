@@ -26,26 +26,26 @@ class upgradesFishSection extends React.Component {
       let newScore = this.props.score;
       newScore.totalValue =
         newScore.totalValue - this.props.upgradesFish[index].price;
-      newScore.perSecondValue += this.props.upgradesFish[index].perSecondBonus;
+      newScore.tpsFish += this.props.upgradesFish[index].perSecondBonus;
 
-      let newupgradesFish = this.props.upgradesFish;
-      newupgradesFish[index].amount++;
-      newupgradesFish[index].price += newupgradesFish[index].initialPrice;
+      let newupgradesFish = this.props.upgradesFish[index];
+      newupgradesFish.amount++;
+      newupgradesFish.price += newupgradesFish.initialPrice;
 
       this.props.updateScore(newScore);
-      this.props.buyUpgradeFish(newupgradesFish[index], index);
+      this.props.buyUpgradeFish(newupgradesFish, index);
 
       //update total score and upgrade price before setting class
       if (
         this.props.score.totalValue >= this.props.upgradesFish[index].price &&
         element.disabled === "disabled"
       ) {
-        this.props.setUpgradeFishClass(newupgradesFish, index, "");
+        this.props.setUpgradeFishClass(index, "");
       } else if (
         this.props.score.totalValue < this.props.upgradesFish[index].price &&
         element.disabled !== "disabled"
       ) {
-        this.props.setUpgradeFishClass(newupgradesFish, index, "disabled");
+        this.props.setUpgradeFishClass(index, "disabled");
       }
     }
   }
@@ -72,7 +72,7 @@ class upgradesFishSection extends React.Component {
           <BuyButton
             value={element}
             index={count}
-            buyUpgradeFish={this.buyUpgradeFish}
+            buyUpgrade={this.buyUpgradeFish}
           />
         </div>
       );
@@ -114,8 +114,8 @@ function mapDispatchToProps(dispatch) {
     updateScore: score => dispatch(scoreActions.updateScore(score)),
     buyUpgradeFish: (upgradesFish, index) =>
       dispatch(upgradesFishActions.buyUpgradeFish(upgradesFish, index)),
-    setUpgradeFishClass: (upgrade, id, className) =>
-      dispatch(upgradesFishActions.setUpgradeFishClass(upgrade, id, className))
+    setUpgradeFishClass: (id, className) =>
+      dispatch(upgradesFishActions.setUpgradeFishClass(id, className))
   };
 }
 

@@ -4,17 +4,20 @@ import update from "immutability-helper";
 
 //START HERE
 export default function upgradesSaleReducer(state = initialState.upgradesSale, action) {
+  let id = action.id;
   switch (action.type) {
+
     case "BUY_UPGRADESALE":
-      return update(state, {
-        [action.id]: { $merge: action.payload }
-      });
+    return Object.assign({}, state, {
+      [id]: action.payload
+    });
+
     case "SET_UPGRADESALECLASS":
-      return update(state, {
-        [action.id]: {
-          disabled: { $set: action.payload }
-        }
-      });
+    return Object.assign({}, state, {
+      [id]: Object.assign({}, state[id], {
+        disabled: action.payload 
+      })
+    });
     default:
       return state;
   }

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as scoreActions from "../../../../actions/scoreActions";
 import * as upgradesFishActions from "../../../../actions/upgradesFishActions";
+import * as upgradesSaleActions from "../../../../actions/upgradesSaleActions";
 
 import "./score.scss";
 
@@ -24,7 +25,7 @@ class Score extends React.Component {
     clearInterval(this.timerID);
   }
 
-  calculateFishPerSecond(fishScorePerTenth){
+  calculateFishPerSecond(fishScorePerTenth) {
     let remainder = fishScorePerTenth % 10;
     this.setState({ fishBuffer: remainder });
     fishScorePerTenth = Math.floor(fishScorePerTenth / 10);
@@ -32,7 +33,7 @@ class Score extends React.Component {
     return fishScorePerTenth;
   }
 
-  calculateSalePerSecond(saleScorePerTenth){
+  calculateSalePerSecond(saleScorePerTenth) {
     let remainder = saleScorePerTenth % 10;
     this.setState({ valueBuffer: remainder });
     saleScorePerTenth = Math.floor(saleScorePerTenth / 10);
@@ -43,6 +44,7 @@ class Score extends React.Component {
   incrementPerSecond() {
     let score = this.props.score;
     let upgradesFish = this.props.upgradesFish;
+    let upgradesSale = this.props.upgradesSale;
 
 
     //Calculate PerSecond for FISH and SALE to tenth. Add remainder to localstate to be used next tenth.
@@ -59,8 +61,8 @@ class Score extends React.Component {
     score.totalFish = (score.totalFish + fishScorePerTenth);
 
     //if fish available, TotalValue = current value + sale per Second if fish available
-    if (score.totalFish > 0){
-      if (score.totalFish < saleScorePerTenth){
+    if (score.totalFish > 0) {
+      if (score.totalFish < saleScorePerTenth) {
         score.totalValue = score.totalValue + score.totalFish;
       } else {
         score.totalValue = score.totalValue + saleScorePerTenth;
@@ -70,11 +72,11 @@ class Score extends React.Component {
 
     //TotalFish = current fish - salesPerSecond
     score.totalFish = score.totalFish - saleScorePerTenth;
-    if (score.totalFish < 0){
+    if (score.totalFish < 0) {
       score.totalFish = 0;
     }
 
-    
+
 
 
 
@@ -85,12 +87,26 @@ class Score extends React.Component {
         score.totalValue >= element.price &&
         element.disabled === "disabled"
       ) {
-        this.props.setUpgradeFishClass(upgradesFish, element.id, "");
+        this.props.setUpgradeFishClass(element.id, "");
       } else if (
         score.totalValue < element.price &&
         element.disabled !== "disabled"
       ) {
-        this.props.setUpgradeFishClass(upgradesFish, element.id, "disabled");
+        this.props.setUpgradeFishClass(element.id, "disabled");
+      }
+    });
+
+    Object.values(upgradesSale).forEach(element => {
+      if (
+        score.totalValue >= element.price &&
+        element.disabled === "disabled"
+      ) {
+        this.props.setUpgradeSaleClass(element.id, "");
+      } else if (
+        score.totalValue < element.price &&
+        element.disabled !== "disabled"
+      ) {
+        this.props.setUpgradeSaleClass(element.id, "disabled");
       }
     });
   }
@@ -129,7 +145,8 @@ Score.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     score: state.score,
-    upgradesFish: state.upgradesFish
+    upgradesFish: state.upgradesFish,
+    upgradesSale: state.upgradesSale
   };
 }
 
@@ -137,8 +154,10 @@ function mapDispatchToProps(dispatch) {
   return {
     updateScore: score =>
       dispatch(scoreActions.updateScore(score)),
-    setUpgradeFishClass: (upgrade, id, className) =>
-      dispatch(upgradesFishActions.setUpgradeFishClass(upgrade, id, className))
+    setUpgradeFishClass: (id, className) =>
+      dispatch(upgradesFishActions.setUpgradeFishClass(id, className)),
+    setUpgradeSaleClass: (id, className) =>
+      dispatch(upgradesSaleActions.setUpgradeSaleClass(id, className))
   };
 }
 

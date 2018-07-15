@@ -1,14 +1,14 @@
 export function buyUpgradeSale(upgrades, id) {
   return {
-    type: "BUY_UPGRADEFISH",
+    type: "BUY_UPGRADESALE",
     id: id,
-    payload: { upgrades }
+    payload: upgrades
   };
 }
 
-export function setUpgradeSaleClass(upgrade, id, className) {
+export function setUpgradeSaleClass(id, className) {
   return {
-    type: "SET_UPGRADEFISHCLASS",
+    type: "SET_UPGRADESALECLASS",
     id: id,
     payload: className
   };

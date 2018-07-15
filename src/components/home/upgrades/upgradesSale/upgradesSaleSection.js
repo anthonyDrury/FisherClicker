@@ -26,26 +26,26 @@ class upgradesSaleSection extends React.Component {
       let newScore = this.props.score;
       newScore.totalValue =
         newScore.totalValue - this.props.upgradesSale[index].price;
-      newScore.perSecondValue += this.props.upgradesSale[index].perSecondBonus;
+      newScore.tpsSale += this.props.upgradesSale[index].perSecondBonus;
 
-      let newupgradesSale = this.props.upgradesSale;
-      newupgradesSale[index].amount++;
-      newupgradesSale[index].price += newupgradesSale[index].initialPrice;
+      let newupgradesSale = this.props.upgradesSale[index];
+      newupgradesSale.amount++;
+      newupgradesSale.price += newupgradesSale.initialPrice;
 
       this.props.updateScore(newScore);
-      this.props.buyUpgradeSale(newupgradesSale[index], index);
+      this.props.buyUpgradeSale(newupgradesSale, index);
 
       //update total score and upgrade price before setting class
       if (
         this.props.score.totalValue >= this.props.upgradesSale[index].price &&
         element.disabled === "disabled"
       ) {
-        this.props.setUpgradeSaleClass(newupgradesSale, index, "");
+        this.props.setUpgradeSaleClass(index, "");
       } else if (
         this.props.score.totalValue < this.props.upgradesSale[index].price &&
         element.disabled !== "disabled"
       ) {
-        this.props.setUpgradeSaleClass(newupgradesSale, index, "disabled");
+        this.props.setUpgradeSaleClass(index, "disabled");
       }
     }
   }
@@ -72,7 +72,7 @@ class upgradesSaleSection extends React.Component {
           <BuyButton
             value={element}
             index={count}
-            buyUpgradeSale={this.buyUpgradeSale}
+            buyUpgrade={this.buyUpgradeSale}
           />
         </div>
       );
@@ -114,8 +114,8 @@ function mapDispatchToProps(dispatch) {
     updateScore: score => dispatch(scoreActions.updateScore(score)),
     buyUpgradeSale: (upgradesSale, index) =>
       dispatch(upgradesSaleActions.buyUpgradeSale(upgradesSale, index)),
-    setUpgradeSaleClass: (upgrade, id, className) =>
-      dispatch(upgradesSaleActions.setUpgradeSaleClass(upgrade, id, className))
+    setUpgradeSaleClass: (id, className) =>
+      dispatch(upgradesSaleActions.setUpgradeSaleClass(id, className))
   };
 }
 
