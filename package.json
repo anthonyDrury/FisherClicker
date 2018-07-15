@@ -1,7 +1,7 @@
 {
-  "name": "n95k07ovnj",
+  "name": "fisher-clicker",
   "version": "1.0.0",
-  "description": "FisherClicker AnthonyDrury",
+  "description": "FisherClicker is an idle clicker game, developed by Anthony Drury.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

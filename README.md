@@ -16,5 +16,11 @@ store.subscribe(() => {
 
 
 # Upgrades
-Upgrades are located in the initial state, if you wish to change these simply edit them there. Remember to update actions and reducers if you are attemping to change functionality. Located at:
+Upgrades are located in the initial state, if you wish to change these simply edit them there. Remember to update actions and reducers if you are attemping to change functionality. They are split into two main groups, upgradesSale and upgradesFish, each responsible for fishing and selling. Located at:
 src/store/initialState.js
+
+If you wish to edit functionality, make sure to edit their respective upgradeSection as well as the score section if required. Located:
+
+src/components/home/upgrades/upgragesFish
+src/components/home/upgrades/upgragesSale
+src/components/shared/header/score
