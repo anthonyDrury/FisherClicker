@@ -12,7 +12,7 @@ export default function upgradesFishReducer(state = initialState.upgradesFish, a
 
     case "SET_UPGRADEFISHCLASS":
       return Object.assign({}, state,
-        [{ ...state[id], disabled: action.payload }]
+        {[id]: { ...state[id], disabled: action.payload }}
       );
 
     default:

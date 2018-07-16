@@ -12,7 +12,7 @@ export default function upgradesSaleReducer(state = initialState.upgradesSale, a
 
     case "SET_UPGRADESALECLASS":
       return Object.assign({}, state,
-        [{ ...state[id], disabled: action.payload }]
+        {[id]: { ...state[id], disabled: action.payload }}
       );
 
     default:

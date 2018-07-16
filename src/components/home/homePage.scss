@@ -7,11 +7,14 @@
         color: white;
         font-size: 20px;
         border: none;
+
+        transition: all;
+
         &:focus {
             outline-color: transparent;
         }
         &:active {
-            background-color: darken(#333, 10%);
+            animation: pulse 0.1s;
         }
     }
     .homePage__upgrade {
@@ -35,4 +38,13 @@
             }
         }
     }
+    
 }
+
+@keyframes pulse {
+    0% {
+    }
+    100% {
+        box-shadow: 0px 0px 30px 5px #333;
+    }
+  }

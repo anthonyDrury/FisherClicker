@@ -57,7 +57,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="homePage">
-        <h1>Fisher Clicker</h1>
         <input
           className="homePage__valueBtn"
           type="button"
