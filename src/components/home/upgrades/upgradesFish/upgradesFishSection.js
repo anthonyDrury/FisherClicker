@@ -41,6 +41,9 @@ class upgradesFishSection extends React.Component {
         element.disabled.substring(0, 8) === "disabled"
       ) {
         this.props.setUpgradeFishClass(index, "enabled");
+        setTimeout(() => {
+          this.props.setUpgradeFishClass(index, "");
+        },1000);
       } else if (
         this.props.score.totalValue < this.props.upgradesFish[index].price &&
         element.disabled.substring(0, 8) !== "disabled"

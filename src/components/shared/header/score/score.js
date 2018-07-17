@@ -88,6 +88,9 @@ class Score extends React.Component {
         element.disabled.substring(0, 8) === "disabled"
       ) {
         this.props.setUpgradeFishClass(element.id, "enabled");
+        setTimeout(() => {
+          this.props.setUpgradeFishClass(element.id, "");
+        },1000);
       } else if (
         score.totalValue < element.price &&
         element.disabled.substring(0, 8) !== "disabled"
@@ -101,7 +104,11 @@ class Score extends React.Component {
         score.totalValue >= element.price &&
         element.disabled.substring(0, 8) === "disabled"
       ) {
+        //Sets enabled for 1 second then sets to "", this allows for animation to only run once.
         this.props.setUpgradeSaleClass(element.id, "enabled");
+        setTimeout(() => {
+          this.props.setUpgradeSaleClass(element.id, "");
+        },1000);
       } else if (
         score.totalValue < element.price &&
         element.disabled.substring(0, 8) !== "disabled"

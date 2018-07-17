@@ -17,6 +17,13 @@ class HomePage extends React.Component {
       upgradeSaleClass: "disabled"
     }
 
+    if (this.props.score.totalValue > 9 || this.props.score.tpsSale > 1 || this.props.tpsFish > 0){
+      this.state.upgradeFishClass = "active";
+      this.state.upgradeSaleClass = "sale";
+    }
+
+
+
     this.onClickUpdate = this.onClickUpdate.bind(this);
     this.updateUpgrades_Fish = this.updateUpgrades_Fish.bind(this);
     this.updateUpgrades_Sale = this.updateUpgrades_Sale.bind(this);
