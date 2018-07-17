@@ -9,7 +9,7 @@ const initialState = {
       perSecondBonus: 1,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     1: {
       id: 1,
@@ -19,7 +19,7 @@ const initialState = {
       perSecondBonus: 10,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     2: {
       id: 2,
@@ -29,7 +29,7 @@ const initialState = {
       perSecondBonus: 100,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     3: {
       id: 3,
@@ -39,7 +39,7 @@ const initialState = {
       perSecondBonus: 500,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     4: {
       id: 4,
@@ -49,7 +49,7 @@ const initialState = {
       perSecondBonus: 1000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     5: {
       id: 5,
@@ -59,7 +59,7 @@ const initialState = {
       perSecondBonus: 2000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     6: {
       id: 6,
@@ -69,7 +69,7 @@ const initialState = {
       perSecondBonus: 5000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     7: {
       id: 7,
@@ -79,27 +79,27 @@ const initialState = {
       perSecondBonus: 8000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     8: {
-      id: 7,
+      id: 8,
       title: "Pequod",
       price: 35000000,
       initialPrice: 35000000,
       perSecondBonus: 10000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     9: {
-      id: 8,
+      id: 9,
       title: "Maui",
       price: 100000000,
       initialPrice: 100000000,
       perSecondBonus: 100000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     }
   },
   upgradesSale: {
@@ -111,7 +111,7 @@ const initialState = {
       perSecondBonus: 1,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     1: {
       id: 1,
@@ -121,7 +121,7 @@ const initialState = {
       perSecondBonus: 10,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     2: {
       id: 2,
@@ -131,7 +131,7 @@ const initialState = {
       perSecondBonus: 100,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     3: {
       id: 3,
@@ -141,7 +141,7 @@ const initialState = {
       perSecondBonus: 500,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     4: {
       id: 4,
@@ -151,7 +151,7 @@ const initialState = {
       perSecondBonus: 1000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     5: {
       id: 5,
@@ -161,7 +161,7 @@ const initialState = {
       perSecondBonus: 2000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     6: {
       id: 6,
@@ -171,7 +171,7 @@ const initialState = {
       perSecondBonus: 5000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     7: {
       id: 7,
@@ -181,27 +181,27 @@ const initialState = {
       perSecondBonus: 8000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     8: {
-      id: 7,
+      id: 8,
       title: "Fish Pill",
       price: 35000000,
       initialPrice: 35000000,
       perSecondBonus: 10000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     },
     9: {
-      id: 8,
+      id: 9,
       title: "~Fysh~",
       price: 100000000,
       initialPrice: 100000000,
       perSecondBonus: 100000,
       amount: 0,
       target: ["anchovie"],
-      disabled: "disabled"
+      disabled: "disabled__initial"
     }
   }
 };

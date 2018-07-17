@@ -13,8 +13,8 @@ class HomePage extends React.Component {
 
     this.state = {
       upgradeView: "Fish",
-      upgradeFishClass: "active",
-      upgradeSaleClass: ""
+      upgradeFishClass: "disabled",
+      upgradeSaleClass: "disabled"
     }
 
     this.onClickUpdate = this.onClickUpdate.bind(this);
@@ -26,8 +26,6 @@ class HomePage extends React.Component {
 
   updateUpgrades_Fish() {
     this.setState({ upgradeView: "Fish", upgradeFishClass: "active", upgradeSaleClass: "" });
-
-
   }
 
   updateUpgrades_Sale() {
@@ -40,6 +38,10 @@ class HomePage extends React.Component {
     score.totalFish++;
 
     this.props.updateTotalFish(score);
+
+    if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9){
+      this.setState({upgradeFishClass: "active", upgradeSaleClass: ""});
+    }
   }
 
   displayUpgrades() {

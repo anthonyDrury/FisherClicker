@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as scoreActions from "../../../../actions/scoreActions";
 import * as upgradesFishActions from "../../../../actions/upgradesFishActions";
 import BuyButton from "../buyButton/buyButton";
-import "./upgradesFishSection.scss";
+import "../upgradesSection.scss";
 
 class upgradesFishSection extends React.Component {
   constructor(props, context) {
@@ -38,12 +38,12 @@ class upgradesFishSection extends React.Component {
       //update total score and upgrade price before setting class
       if (
         this.props.score.totalValue >= this.props.upgradesFish[index].price &&
-        element.disabled === "disabled"
+        element.disabled.substring(0, 8) === "disabled"
       ) {
-        this.props.setUpgradeFishClass(index, "");
+        this.props.setUpgradeFishClass(index, "enabled");
       } else if (
         this.props.score.totalValue < this.props.upgradesFish[index].price &&
-        element.disabled !== "disabled"
+        element.disabled.substring(0, 8) !== "disabled"
       ) {
         this.props.setUpgradeFishClass(index, "disabled");
       }

@@ -1,5 +1,5 @@
-.upgradesSale {
-    .upgradesSale__displaySection {
+.upgradesFish, .upgradesSale {
+    &__displaySection {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -27,6 +27,14 @@
                 color: black;
             }
         }
+        .enabled{
+            -webkit-animation: wobble-hor-bottom 0.8s both;
+	        animation: wobble-hor-bottom 0.8s both;
+        }
+        .disabled__initial{
+            opacity: 0;
+            visibility: hidden;
+        }
         .disabled {
             opacity: 0.5;
             .upgradeElement__curserWrap {
@@ -39,3 +47,5 @@
         }
     }
 }
+
+

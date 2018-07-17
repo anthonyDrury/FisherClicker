@@ -85,12 +85,12 @@ class Score extends React.Component {
     Object.values(upgradesFish).forEach(element => {
       if (
         score.totalValue >= element.price &&
-        element.disabled === "disabled"
+        element.disabled.substring(0, 8) === "disabled"
       ) {
-        this.props.setUpgradeFishClass(element.id, "");
+        this.props.setUpgradeFishClass(element.id, "enabled");
       } else if (
         score.totalValue < element.price &&
-        element.disabled !== "disabled"
+        element.disabled.substring(0, 8) !== "disabled"
       ) {
         this.props.setUpgradeFishClass(element.id, "disabled");
       }
@@ -99,12 +99,12 @@ class Score extends React.Component {
     Object.values(upgradesSale).forEach(element => {
       if (
         score.totalValue >= element.price &&
-        element.disabled === "disabled"
+        element.disabled.substring(0, 8) === "disabled"
       ) {
-        this.props.setUpgradeSaleClass(element.id, "");
+        this.props.setUpgradeSaleClass(element.id, "enabled");
       } else if (
         score.totalValue < element.price &&
-        element.disabled !== "disabled"
+        element.disabled.substring(0, 8) !== "disabled"
       ) {
         this.props.setUpgradeSaleClass(element.id, "disabled");
       }

@@ -5,7 +5,7 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 import routes from "./routes";
 import "./styles/styles.scss";
-
+import "./styles/animations.scss";
 import { loadState, saveState } from "./store/localStorage";
 
 const persistedStore = loadState();
