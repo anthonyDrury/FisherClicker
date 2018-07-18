@@ -17,7 +17,7 @@ class HomePage extends React.Component {
       upgradeSaleClass: "disabled"
     }
 
-    if (this.props.score.totalValue > 9 || this.props.score.tpsSale > 1 || this.props.tpsFish > 0){
+    if (this.props.score.totalValue > 9 || this.props.score.tpsSale > 1 || this.props.tpsFish > 0) {
       this.state.upgradeFishClass = "active";
       this.state.upgradeSaleClass = "sale";
     }
@@ -25,6 +25,7 @@ class HomePage extends React.Component {
 
 
     this.onClickUpdate = this.onClickUpdate.bind(this);
+    this.onClickUpdateSell = this.onClickUpdateSell.bind(this);
     this.updateUpgrades_Fish = this.updateUpgrades_Fish.bind(this);
     this.updateUpgrades_Sale = this.updateUpgrades_Sale.bind(this);
     this.displayUpgrades = this.displayUpgrades.bind(this);
@@ -46,8 +47,25 @@ class HomePage extends React.Component {
 
     this.props.updateTotalFish(score);
 
-    if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9){
-      this.setState({upgradeFishClass: "active", upgradeSaleClass: ""});
+    if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9) {
+      this.setState({ upgradeFishClass: "active", upgradeSaleClass: "" });
+    }
+  }
+
+
+  onClickUpdateSell() {
+    let score = this.props.score;
+
+
+    if (score.totalFish > 0) {
+      score.totalFish--;
+      score.totalValue++;
+    }
+
+    this.props.updateScore(score);
+
+    if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9) {
+      this.setState({ upgradeFishClass: "active", upgradeSaleClass: "" });
     }
   }
 
@@ -71,6 +89,12 @@ class HomePage extends React.Component {
           type="button"
           onClick={this.onClickUpdate}
           value="Fish"
+        />
+        <input
+          className="homePage__valueBtn"
+          type="button"
+          onClick={this.onClickUpdateSell}
+          value="Sell"
         />
 
         <div className="homePage__upgrade">
@@ -113,7 +137,10 @@ function mapDispatchToProps(dispatch) {
     updatePerSecond: score =>
       dispatch(scoreActions.updatePerSecond(score.perSecondValue)),
     updateTotalFish: score =>
-      dispatch(scoreActions.updateTotalFish(score.totalFish))
+      dispatch(scoreActions.updateTotalFish(score.totalFish)),
+    updateScore: score =>
+      dispatch(scoreActions.updateScore(score))
+
   };
 }
 

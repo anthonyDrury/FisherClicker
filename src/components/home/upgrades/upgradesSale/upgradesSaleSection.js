@@ -43,7 +43,7 @@ class upgradesSaleSection extends React.Component {
         this.props.setUpgradeSaleClass(index, "enabled");
         setTimeout(() => {
           this.props.setUpgradeSaleClass(index, "");
-        },1000);
+        }, 1000);
       } else if (
         this.props.score.totalValue < this.props.upgradesSale[index].price &&
         element.disabled.substring(0, 8) !== "disabled"

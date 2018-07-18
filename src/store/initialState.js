@@ -1,5 +1,5 @@
 const initialState = {
-  score: { tpsFish: 0, tpsSale: 1, totalFish: 0, totalValue: 0 },   //tps = TotalPerSecond
+  score: { tpsFish: 0, tpsSale: 0, totalFish: 0, totalValue: 0 },   //tps = TotalPerSecond
   upgradesFish: {
     0: {
       id: 0,

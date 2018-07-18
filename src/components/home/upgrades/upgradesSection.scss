@@ -1,4 +1,5 @@
-.upgradesFish, .upgradesSale {
+.upgradesFish,
+.upgradesSale {
     &__displaySection {
         display: flex;
         justify-content: center;
@@ -12,11 +13,9 @@
             background-color: #333;
             color: white;
             margin: 5px;
-
             @media screen and (max-width: 576px) {
                 width: 140px;
             }
-
             .upgradeElement__bonus {
                 color: orange;
             }
@@ -27,11 +26,11 @@
                 color: black;
             }
         }
-        .enabled{
+        .enabled {
             -webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
+            animation: wobble-hor-bottom 0.8s both;
         }
-        .disabled__initial{
+        .disabled__initial {
             opacity: 0;
             visibility: hidden;
         }
@@ -47,5 +46,3 @@
         }
     }
 }
-
-
