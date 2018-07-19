@@ -90,7 +90,7 @@ class Score extends React.Component {
         this.props.setUpgradeFishClass(element.id, "enabled");
         setTimeout(() => {
           this.props.setUpgradeFishClass(element.id, "");
-        },1000);
+        }, 1000);
       } else if (
         score.totalValue < element.price &&
         element.disabled.substring(0, 8) !== "disabled"
@@ -108,7 +108,7 @@ class Score extends React.Component {
         this.props.setUpgradeSaleClass(element.id, "enabled");
         setTimeout(() => {
           this.props.setUpgradeSaleClass(element.id, "");
-        },1000);
+        }, 1000);
       } else if (
         score.totalValue < element.price &&
         element.disabled.substring(0, 8) !== "disabled"

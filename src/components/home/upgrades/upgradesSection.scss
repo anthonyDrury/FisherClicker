@@ -8,13 +8,18 @@
         max-width: 800px;
         margin: 0 auto;
         .upgradeElement {
-            width: 150px;
+            font-size: 20px;
+            width: 200px;
             padding: 5px;
             background-color: #333;
             color: white;
             margin: 5px;
+            -webkit-box-shadow: 6px 6px 0px 2px black;
+            -moz-box-shadow: 6px 6px 0px 2px black;
+            box-shadow: 6px 6px 0px 2px black;
             @media screen and (max-width: 576px) {
                 width: 140px;
+                font-size: 16px;
             }
             .upgradeElement__bonus {
                 color: orange;
@@ -33,6 +38,7 @@
         .disabled__initial {
             opacity: 0;
             visibility: hidden;
+            display: none;
         }
         .disabled {
             opacity: 0.5;
