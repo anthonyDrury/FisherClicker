@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as scoreActions from "../../../../actions/scoreActions";
 import * as upgradesFishActions from "../../../../actions/upgradesFishActions";
 import BuyButton from "../buyButton/buyButton";
+import UpgradeElement from "../upgradeElement/upgradeElement";
 import "../upgradesSection.scss";
 
 class upgradesFishSection extends React.Component {
@@ -61,23 +62,16 @@ class upgradesFishSection extends React.Component {
     let count = 0;
     Object.values(upgradesFish).forEach(element => {
       upgradesFishHTML.push(
-        <div className={`upgradeElement ${element.disabled}`} key={count}>
-          <p>
-            <span className="upgradeElement__title">{element.title} </span>
-            <span className="upgradeElement__bonus">
-              +{element.perSecondBonus}
-            </span>
-          </p>
-          <p>
-            $: <span className="upgradeElement__price">{element.price}</span> #:{" "}
-            <span className="upgradeElement__amount">{element.amount}</span>
-          </p>
+        <UpgradeElement
+          element={element}
+          key={count}
+        >
           <BuyButton
             value={element}
-            index={count}
             buyUpgrade={this.buyUpgradeFish}
+            index={count}
           />
-        </div>
+        </UpgradeElement>
       );
       count++;
     });
