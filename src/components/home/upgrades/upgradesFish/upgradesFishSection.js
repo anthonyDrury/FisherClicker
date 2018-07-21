@@ -31,7 +31,7 @@ class upgradesFishSection extends React.Component {
       let newUpgradesFish = this.props.upgradesFish[index];
       newUpgradesFish.amount++;
       newUpgradesFish.price = newUpgradesFish.initialPrice * newUpgradesFish.amount;
-      newUpgradesFish.price += (newUpgradesFish.amount * 10);
+      newUpgradesFish.price += newUpgradesFish.price * (newUpgradesFish.amount / 10);
       newUpgradesFish.price = Math.floor(newUpgradesFish.price);
 
       this.props.updateScore(newScore);
@@ -66,6 +66,7 @@ class upgradesFishSection extends React.Component {
         <UpgradeElement
           element={element}
           key={count}
+          iconClass={"homePage__icon fas fa-fish"}
         >
           <BuyButton
             value={element}

@@ -31,7 +31,7 @@ class upgradesSaleSection extends React.Component {
       let newUpgradesSale = this.props.upgradesSale[index];
       newUpgradesSale.amount++;
       newUpgradesSale.price = newUpgradesSale.initialPrice * newUpgradesSale.amount;
-      newUpgradesSale.price += (newUpgradesSale.amount * 10);
+      newUpgradesSale.price += newUpgradesSale.price * (newUpgradesSale.amount / 10);
       newUpgradesSale.price = Math.floor(newUpgradesSale.price);
 
       this.props.updateScore(newScore);
@@ -66,6 +66,7 @@ class upgradesSaleSection extends React.Component {
         <UpgradeElement
           element={element}
           key={count}
+          iconClass={"homePage__icon fas fa-money-bill"}
         >
           <BuyButton
             value={element}

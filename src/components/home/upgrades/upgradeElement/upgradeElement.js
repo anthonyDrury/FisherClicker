@@ -11,6 +11,8 @@ class UpgradeElement extends React.Component {
           <span className="upgradeElement__bonus">
             +{this.props.element.perSecondBonus}
           </span>
+          {" "}
+          <i className={this.props.iconClass}/>
         </p>
         <p>
           $: <span className="upgradeElement__price">{this.props.element.price}</span> #:{" "}

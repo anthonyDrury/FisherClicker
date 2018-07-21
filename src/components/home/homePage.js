@@ -88,14 +88,14 @@ class HomePage extends React.Component {
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdate}
-        ><i className="homePage__icon fas fa-fish"></i>
+        ><i className="homePage__icon fas fa-fish"/>
         </button>
         <button
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdateSell}
         >
-          <i className="homePage__icon fas fa-money-bill"></i>
+          <i className="homePage__icon fas fa-money-bill"/>
         </button>
 
         <div className="homePage__upgrade">

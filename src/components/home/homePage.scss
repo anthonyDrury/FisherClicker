@@ -8,14 +8,18 @@
         font-size: 20px;
         border: none;
         margin: 0 10px;
+        border: 1px solid black;
+        -webkit-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+        -moz-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+        box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
         transition: all;
         &:focus {
             outline-color: transparent;
         }
         &:active {
-            -webkit-box-shadow: 0px 0px 30px 5px #333;
-            -moz-box-shadow: 0px 0px 30px 5px #333;
-            box-shadow: 0px 0px 30px 5px #333;
+            -webkit-box-shadow: -1px 1px black ,0px 0px 30px 5px #333;
+            -moz-box-shadow: -1px 1px black, 0px 0px 30px 5px #333;
+            box-shadow: -1px 1px black, 0px 0px 30px 5px #333;
             background-color: darken(#333, 10%);
         }
         @media screen and (max-width: 576px) {
@@ -41,7 +45,10 @@
             font-size: 16px;
             border: none;
             margin: 10px 0;
-            transition: background-color 0.5s;
+            -webkit-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            -moz-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            transition: all 0.5s;
             &:focus {
                 outline-color: transparent;
             }
@@ -51,6 +58,17 @@
             &.disabled {
                 opacity: 0;
                 visibility: hidden;
+            }
+            &:first-child {
+                z-index: 1;
+            }
+            &:last-child {
+                -webkit-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+                -moz-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+                box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+                &.active {
+                    background-color: darken(#333, 10%);
+                }
             }
         }
     }
