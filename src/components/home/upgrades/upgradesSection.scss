@@ -9,14 +9,21 @@
         margin: 0 auto;
         .upgradeElement {
             font-size: 20px;
-            width: 200px;
+            width: 190px;
             padding: 5px;
             background-color: #333;
             color: white;
             margin: 5px;
-            -webkit-box-shadow: 6px 6px 0px 2px black;
-            -moz-box-shadow: 6px 6px 0px 2px black;
-            box-shadow: 6px 6px 0px 2px black;
+            border: 1px solid black;
+            -webkit-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            -moz-box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+            transition: all;
+            &:active {
+                -webkit-box-shadow:  -1px 1px black;
+                -moz-box-shadow: -1px 1px black;
+                box-shadow: -1px 1px black;
+            }
             @media screen and (max-width: 576px) {
                 width: 140px;
                 font-size: 16px;
@@ -29,6 +36,14 @@
             }
             .upgradeElement__btn {
                 color: black;
+                background-color: #f4f4f4;
+                border: none;     
+                &:focus {
+                    outline: none;
+                }
+                &:active {
+                    border: black 1px solid;
+                }
             }
         }
         .enabled {

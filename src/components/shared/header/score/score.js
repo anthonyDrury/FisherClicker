@@ -123,22 +123,22 @@ class Score extends React.Component {
       <div className="score">
         <p className="score__value">
           Fish per/sec:<br />
-          {this.props.score.tpsFish}
+          <span className="score__num">{this.props.score.tpsFish}</span>
         </p>
 
         <p className="score__value">
           Sale per/sec:<br />
-          {this.props.score.tpsSale}
+          <span className="score__num">{this.props.score.tpsSale}</span>
         </p>
 
         <p className="score__value">
           Current Fish:<br />
-          {this.props.score.totalFish}
+          <span className="score__num">{this.props.score.totalFish}</span>
         </p>
 
         <p className="score__value">
           Current Value:<br />
-          {this.props.score.totalValue}
+          <span className="score__num">{this.props.score.totalValue}</span>
         </p>
       </div>
     );

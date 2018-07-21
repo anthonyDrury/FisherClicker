@@ -84,18 +84,19 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="homePage">
-        <input
+        <button
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdate}
-          value="Fish"
-        />
-        <input
+        ><i className="homePage__icon fas fa-fish"></i>
+        </button>
+        <button
           className="homePage__valueBtn"
           type="button"
           onClick={this.onClickUpdateSell}
-          value="Sell"
-        />
+        >
+          <i className="homePage__icon fas fa-money-bill"></i>
+        </button>
 
         <div className="homePage__upgrade">
           <button

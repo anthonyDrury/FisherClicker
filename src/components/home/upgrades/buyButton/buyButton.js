@@ -9,7 +9,7 @@ class BuyButton extends React.Component {
     return (
       <span className="upgradeElement__curserWrap">
         <button onClick={this.handleClick} className="upgradeElement__btn">
-          Hire
+          <i class="fas fa-user-plus"></i>
         </button>
       </span>
     );

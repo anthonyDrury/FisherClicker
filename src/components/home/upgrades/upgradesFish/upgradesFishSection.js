@@ -20,21 +20,22 @@ class upgradesFishSection extends React.Component {
 
   /* Purchases UpgradeFish if user has enough points,
      Sets new total score minus price of upgrade,
-     adds to the per second total score,
+     adds to the per second total Fish score,
      sets upgrade to disabled if not enough points */
   buyUpgradeFish(element, index) {
     if (this.props.score.totalValue >= this.props.upgradesFish[index].price) {
       let newScore = this.props.score;
-      newScore.totalValue =
-        newScore.totalValue - this.props.upgradesFish[index].price;
+      newScore.totalValue = newScore.totalValue - this.props.upgradesFish[index].price;
       newScore.tpsFish += this.props.upgradesFish[index].perSecondBonus;
 
-      let newupgradesFish = this.props.upgradesFish[index];
-      newupgradesFish.amount++;
-      newupgradesFish.price += newupgradesFish.initialPrice;
+      let newUpgradesFish = this.props.upgradesFish[index];
+      newUpgradesFish.amount++;
+      newUpgradesFish.price = newUpgradesFish.initialPrice * newUpgradesFish.amount;
+      newUpgradesFish.price += (newUpgradesFish.amount * 10);
+      newUpgradesFish.price = Math.floor(newUpgradesFish.price);
 
       this.props.updateScore(newScore);
-      this.props.buyUpgradeFish(newupgradesFish, index);
+      this.props.buyUpgradeFish(newUpgradesFish, index);
 
       //update total score and upgrade price before setting class
       if (

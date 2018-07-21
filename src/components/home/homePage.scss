@@ -13,8 +13,20 @@
             outline-color: transparent;
         }
         &:active {
+            -webkit-box-shadow: 0px 0px 30px 5px #333;
+            -moz-box-shadow: 0px 0px 30px 5px #333;
             box-shadow: 0px 0px 30px 5px #333;
             background-color: darken(#333, 10%);
+        }
+        @media screen and (max-width: 576px) {
+            margin: 5px;
+        }
+        .homePage__icon {
+            font-size: 45px;
+            line-height: 0;
+            margin: auto;
+            display: block;
+            padding: 20px 0;
         }
     }
     .homePage__upgrade {
@@ -29,6 +41,7 @@
             font-size: 16px;
             border: none;
             margin: 10px 0;
+            transition: background-color 0.5s;
             &:focus {
                 outline-color: transparent;
             }

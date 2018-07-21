@@ -25,16 +25,17 @@ class upgradesSaleSection extends React.Component {
   buyUpgradeSale(element, index) {
     if (this.props.score.totalValue >= this.props.upgradesSale[index].price) {
       let newScore = this.props.score;
-      newScore.totalValue =
-        newScore.totalValue - this.props.upgradesSale[index].price;
+      newScore.totalValue = newScore.totalValue - this.props.upgradesSale[index].price;
       newScore.tpsSale += this.props.upgradesSale[index].perSecondBonus;
 
-      let newupgradesSale = this.props.upgradesSale[index];
-      newupgradesSale.amount++;
-      newupgradesSale.price += newupgradesSale.initialPrice;
+      let newUpgradesSale = this.props.upgradesSale[index];
+      newUpgradesSale.amount++;
+      newUpgradesSale.price = newUpgradesSale.initialPrice * newUpgradesSale.amount;
+      newUpgradesSale.price += (newUpgradesSale.amount * 10);
+      newUpgradesSale.price = Math.floor(newUpgradesSale.price);
 
       this.props.updateScore(newScore);
-      this.props.buyUpgradeSale(newupgradesSale, index);
+      this.props.buyUpgradeSale(newUpgradesSale, index);
 
       //update total score and upgrade price before setting class
       if (

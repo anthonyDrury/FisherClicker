@@ -7,6 +7,7 @@ class UpgradeElement extends React.Component {
       <div className={`upgradeElement ${this.props.element.disabled}`}>
         <p>
           <span className="upgradeElement__title">{this.props.element.title} </span>
+          <br/>
           <span className="upgradeElement__bonus">
             +{this.props.element.perSecondBonus}
           </span>
