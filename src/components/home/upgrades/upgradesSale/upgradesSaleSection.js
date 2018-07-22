@@ -67,6 +67,7 @@ class upgradesSaleSection extends React.Component {
           element={element}
           key={count}
           iconClass={"homePage__icon fas fa-money-bill"}
+          buyUpgrade={this.buyUpgradeSale}
         >
           <BuyButton
             value={element}

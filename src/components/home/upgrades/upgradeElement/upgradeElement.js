@@ -1,10 +1,13 @@
 import React from "react";
 
 class UpgradeElement extends React.Component {
+  handleClick = () => {
+    this.props.buyUpgrade(this.props.element, this.props.element.id);
+  };
 
   render() {
     return (
-      <div className={`upgradeElement ${this.props.element.disabled}`}>
+      <div className={`upgradeElement ${this.props.element.disabled}`} onClick={this.handleClick}>
         <p>
           <span className="upgradeElement__title">{this.props.element.title} </span>
           <br/>
