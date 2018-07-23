@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as scoreActions from "../../../../actions/scoreActions";
 import * as upgradesSaleActions from "../../../../actions/upgradesSaleActions";
-import BuyButton from "../buyButton/buyButton";
 import UpgradeElement from "../upgradeElement/upgradeElement";
 import "../upgradesSection.scss";
 
@@ -68,13 +67,7 @@ class upgradesSaleSection extends React.Component {
           key={count}
           iconClass={"homePage__icon fas fa-money-bill"}
           buyUpgrade={this.buyUpgradeSale}
-        >
-          <BuyButton
-            value={element}
-            buyUpgrade={this.buyUpgradeSale}
-            index={count}
-          />
-        </UpgradeElement>
+        />
       );
       count++;
     });

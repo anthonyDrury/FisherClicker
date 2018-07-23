@@ -40,7 +40,7 @@ class HomePage extends React.Component {
     this.setState({ upgradeView: "Sale", upgradeFishClass: "", upgradeSaleClass: "active" });
   }
 
-  onClickUpdate() {
+  onClickUpdate(e) {
     let score = this.props.score;
 
     score.totalFish++;
@@ -50,75 +50,75 @@ class HomePage extends React.Component {
     if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9) {
       this.setState({ upgradeFishClass: "active", upgradeSaleClass: "" });
     }
+}
+
+
+onClickUpdateSell() {
+  let score = this.props.score;
+
+
+  if (score.totalFish > 0) {
+    score.totalFish--;
+    score.totalValue++;
   }
 
+  this.props.updateScore(score);
 
-  onClickUpdateSell() {
-    let score = this.props.score;
+  if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9) {
+    this.setState({ upgradeFishClass: "active", upgradeSaleClass: "" });
+  }
+}
 
+displayUpgrades() {
+  let upgradesHTML = <UpgradeFish />;
 
-    if (score.totalFish > 0) {
-      score.totalFish--;
-      score.totalValue++;
-    }
-
-    this.props.updateScore(score);
-
-    if (this.state.upgradeFishClass === "disabled" && this.props.score.totalValue > 9) {
-      this.setState({ upgradeFishClass: "active", upgradeSaleClass: "" });
-    }
+  if (this.state.upgradeView === "Fish") {
+    upgradesHTML = <UpgradeFish />;
+  } else if (this.state.upgradeView === "Sale") {
+    upgradesHTML = <UpgradeSale />;
   }
 
-  displayUpgrades() {
-    let upgradesHTML = <UpgradeFish />;
+  return upgradesHTML;
+}
 
-    if (this.state.upgradeView === "Fish") {
-      upgradesHTML = <UpgradeFish />;
-    } else if (this.state.upgradeView === "Sale") {
-      upgradesHTML = <UpgradeSale />;
-    }
+render() {
+  return (
+    <div className="homePage">
+      <button
+        className="homePage__valueBtn"
+        type="button"
+        onClick={(e) => this.onClickUpdate(e)}
+      ><i className="homePage__icon fas fa-fish" />
+      </button>
+      <button
+        className="homePage__valueBtn"
+        type="button"
+        onClick={this.onClickUpdateSell}
+      >
+        <i className="homePage__icon fas fa-money-bill" />
+      </button>
 
-    return upgradesHTML;
-  }
-
-  render() {
-    return (
-      <div className="homePage">
+      <div className="homePage__upgrade">
         <button
-          className="homePage__valueBtn"
-          type="button"
-          onClick={this.onClickUpdate}
-        ><i className="homePage__icon fas fa-fish"/>
-        </button>
+          className={`homePage__upgradeBtn ${this.state.upgradeFishClass}`}
+          onClick={this.updateUpgrades_Fish}
+        >Fish Upgrades</button>
+
         <button
-          className="homePage__valueBtn"
-          type="button"
-          onClick={this.onClickUpdateSell}
-        >
-          <i className="homePage__icon fas fa-money-bill"/>
-        </button>
-
-        <div className="homePage__upgrade">
-          <button
-            className={`homePage__upgradeBtn ${this.state.upgradeFishClass}`}
-            onClick={this.updateUpgrades_Fish}
-          >Fish Upgrades</button>
-
-          <button
-            className={`homePage__upgradeBtn ${this.state.upgradeSaleClass}`}
-            onClick={this.updateUpgrades_Sale}
-          >Sale Upgrades</button>
-        </div>
-
-
-        {this.displayUpgrades()}
-
-
-
-
+          className={`homePage__upgradeBtn ${this.state.upgradeSaleClass}`}
+          onClick={this.updateUpgrades_Sale}
+        >Sale Upgrades</button>
       </div>
-    );
-  }
+
+
+      {this.displayUpgrades()}
+
+
+
+
+    </div>
+  );
+}
 }
 
 HomePage.propTypes = {

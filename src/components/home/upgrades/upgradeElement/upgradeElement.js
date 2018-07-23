@@ -21,7 +21,6 @@ class UpgradeElement extends React.Component {
           $: <span className="upgradeElement__price">{this.props.element.price}</span> #:{" "}
           <span className="upgradeElement__amount">{this.props.element.amount}</span>
         </p>
-        {this.props.children}
       </div>
     );
   }
